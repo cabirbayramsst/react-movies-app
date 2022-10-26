@@ -8,19 +8,10 @@ import Api from '../../Services/dataService'
 
 import './Movie.css'
 
-type State = {
-  name: number,
-  description: string,
-  urlImage: string,
-  stars: number,
-  genres: <Array>,
-  release_date: string,
-  videoId: number
-}
 
-export default class Movie extends Component <State> {
+export default class Movie extends Component{
   constructor (props) {
-    super(prosp)
+    super(props)
 
     this.state = {
       name: '',
@@ -43,7 +34,7 @@ export default class Movie extends Component <State> {
             name: data.title,
             stars: data.vote_average / 2,
             description: data.overview,
-            genres: (data.genres: Array<number>),
+            genres: (data.genres),
             release_date: data.release_date,
             videoId: data.videos.results['0'].key
           })
